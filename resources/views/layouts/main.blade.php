@@ -27,9 +27,9 @@
                         <a class="nav-link @if (Route::is('students.index')) active @endif" aria-current="page"
                             href="{{ route('students.index') }}">Lista
                             studenti</a>
-
                     </div>
                 </div>
+                <a href="{{ route('students.create') }}" class="btn btn-success">Aggiungi Studente</a>
             </div>
         </nav>
 
