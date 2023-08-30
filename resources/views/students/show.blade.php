@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('main')
+
     <div class="container my-5">
 
         {{-- CARD --}}
@@ -18,6 +19,6 @@
             </div>
 
         </div>
-
+        
     </div>
 @endsection
