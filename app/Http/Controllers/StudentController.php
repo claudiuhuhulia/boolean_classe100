@@ -19,9 +19,11 @@ class StudentController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+
+    // Create Student
     public function create()
     {
-        //
+        return view('students.create');
     }
 
     /**
@@ -29,7 +31,12 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $student = new Student;
+        $student->fill($data);
+        $student->save();
+
+        return to_route('students.show', $student);
     }
 
     /**
@@ -37,7 +44,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return view('students.show', compact('student'));
     }
 
     /**
