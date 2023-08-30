@@ -19,7 +19,8 @@
                         <td class="d-flex justify-content-center">
                             <a class="btn btn-warning " href="#">Modifica</a>
                             <a class="btn btn-danger mx-2" href="#">Elimina</a>
-                            <a class="btn btn-primary " href="#">Vedi</a>
+                            <a class="btn btn-primary "
+                                href="{{ route('students.show', ['student' => $student->id]) }}">Vedi</a>
 
                         </td>
                     </tr>
