@@ -18,13 +18,16 @@
                         <td>{{ $student->surname }}</td>
                         <td class="d-flex justify-content-center">
                             <a class="btn btn-warning " href="#">Modifica</a>
-                            <a class="btn btn-danger mx-2" href="#">Elimina</a>
+                            <form class="deleteForm" action=" {{ route('students.destroy', $student->id) }} " method="POST"
+                                data-name="{{ $student->name }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Elimina</button>
+                            </form>
                             <a class="btn btn-primary " href="#">Vedi</a>
-
                         </td>
                     </tr>
                 @endforeach
-
             </tbody>
         </table>
     </div>
