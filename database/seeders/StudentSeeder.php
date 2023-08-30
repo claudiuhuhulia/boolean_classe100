@@ -5,29 +5,18 @@ namespace Database\Seeders;
 use App\Models\Student;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Http\Request;
+
 
 class StudentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
-
-    // Create Students
-    public function create()
+    public function run(): void
     {
-        return view('students.create');
-    }
-
-    // Store Comic
-    public function store(Request $request)
-    {
-
-        $data = $request->all();
-        $student = new Student;
-        $student->fill($data);
-        $student->save();
-
-        return to_route('students.show', $student);
+        $new_student = new Student();
+        $new_student->name = 'pippo';
+        $new_student->surname = 'pluto';
+        $new_student->save();
     }
 }

@@ -18,10 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/students/index', [StudentController::class, 'index'])->name('students.index');
-
 // lista delle students
 Route::post('/students', [StudentController::class, 'store'])->name('students.store');
+
+Route::get('/students/index', [StudentController::class, 'index'])->name('students.index');
 
 // form di creazione student
 Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
