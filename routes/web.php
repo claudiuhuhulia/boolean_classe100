@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
+use App\Models\Student;
 
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,8 @@ Route::post('/students', [StudentController::class, 'store'])->name('students.st
 // form di creazione student
 Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
 
+Route::get('students/trash', [StudentController::class, 'trash'])->name('students.trash'); //pagina cestino
+
 // mostra il singolo student
 Route::get('/students/{student}', [StudentController::class, 'show'])->name('students.show');
 
@@ -37,3 +40,8 @@ Route::delete('/students/{student}', [StudentController::class, 'destroy'])->nam
 
 // mostra il form di modifica 
 Route::get('/students/{student}/edit', [StudentController::class, 'edit'])->name('students.edit');
+
+
+Route::patch('/students/{student}/restore', [ComicController::class, 'restore'])->name('students.restore'); // recupero studente
+Route::delete('/students/{student}', [StudentController::class, 'destroy'])->name('students.destroy'); // sposta studente nel cestino
+Route::delete('/students/{student}/drop', [StudentController::class, 'drop'])->name('students.drop'); // cancellazione studente dal db
