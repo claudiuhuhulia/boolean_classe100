@@ -42,6 +42,6 @@ Route::delete('/students/{student}', [StudentController::class, 'destroy'])->nam
 Route::get('/students/{student}/edit', [StudentController::class, 'edit'])->name('students.edit');
 
 
-Route::patch('/students/{student}/restore', [ComicController::class, 'restore'])->name('students.restore'); // recupero studente
+Route::patch('/students/{student}/restore', [StudentController::class, 'restore'])->name('students.restore'); // recupero studente
 Route::delete('/students/{student}', [StudentController::class, 'destroy'])->name('students.destroy'); // sposta studente nel cestino
 Route::delete('/students/{student}/drop', [StudentController::class, 'drop'])->name('students.drop'); // cancellazione studente dal db

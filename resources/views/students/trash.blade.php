@@ -1,4 +1,4 @@
-@section('layouts.main')
+@extends('layouts.main')
 
 @section('main')
     <div class="container">
@@ -27,4 +27,4 @@
             </ul>
         </div>
     </div>
-@endsection()
+@endsection
