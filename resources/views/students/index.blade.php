@@ -16,7 +16,7 @@
                     <tr>
                         <td>{{ $student->name }}</td>
                         <td>{{ $student->surname }}</td>
-                        <td class="d-flex justify-content-center">
+                        <td class="d-flex justify-content-center gap-3">
                             <a class="btn btn-warning " href="{{ route('students.edit', $student) }}">Modifica</a>
                             <a class="btn btn-primary "
                                 href="{{ route('students.show', ['student' => $student->id]) }}">Vedi</a>

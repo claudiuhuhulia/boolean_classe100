@@ -11,6 +11,8 @@
 
 <body>
 
+
+
     <header>
 
         <nav class="navbar navbar-expand-lg bg-dark " data-bs-theme="dark">
@@ -27,6 +29,8 @@
                         <a class="nav-link @if (Route::is('students.index')) active @endif" aria-current="page"
                             href="{{ route('students.index') }}">Lista
                             studenti</a>
+                        <a class="nav-link @if (Route::is('students.trash')) active @endif" aria-current="page"
+                            href="{{ route('students.trash') }}">Cestino</a>
                     </div>
                 </div>
                 <a href="{{ route('students.create') }}" class="btn btn-success">Aggiungi Studente</a>
@@ -36,8 +40,11 @@
     </header>
 
     <main>
+        @yield('alert')
         @yield('main')
     </main>
+
+    @yield('scripts')
 </body>
 
 </html>

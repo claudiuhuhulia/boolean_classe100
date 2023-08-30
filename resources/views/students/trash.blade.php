@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('alert')
+    @include('includes.alert')
+@endsection
+
 @section('main')
     <div class="container">
         <h2>Cestino</h2>
@@ -8,7 +12,7 @@
                 @foreach ($students as $student)
                     <li class="d-flex justify-content-between align-items-center">
                         <div class="itemValue"> {{ $student->name }} </div>
-                        <div class="itemButtons">
+                        <div class="itemButtons d-flex justify-content-center gap-3">
                             <form action=" {{ route('students.restore', $student->id) }} " method="POST">
                                 @csrf
                                 @method('PATCH')
@@ -27,4 +31,8 @@
             </ul>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/confirmValidation.js')
 @endsection
