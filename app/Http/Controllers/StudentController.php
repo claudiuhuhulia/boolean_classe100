@@ -85,7 +85,7 @@ class StudentController extends Controller
         $student = Student::onlyTrashed()->findOrFail($id);
         $student->forceDelete();
 
-        return to_route('students.index')
+        return to_route('students.trash')
             ->with('alert-type', 'danger')
             ->with('alert-message', "Student '$student->name' permanently deleted.");
     }
